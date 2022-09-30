@@ -4,7 +4,6 @@
     <h1 class="h2">CREATE NEW POSTS</h1>
 </div>
 <div class="col-lg-8">
-    
     <form method="post" action="/dashboard/posts">
         @csrf
         <div class="mb-3">    
@@ -13,7 +12,7 @@
         </div>
         <div class="mb-3">    
           <label for="slug" class="form-label">Slug</label>
-          <input type="text" class="form-control" id="slug" name="slug" value="" disabled readonly>
+          <input type="text" class="form-control" id="slug" name="slug" disabled>
         </div>
         <div class="mb-3">    
           <label for="category" class="form-label">Category</label>
@@ -31,8 +30,7 @@
           </select>
         </div>
         <button type="submit" class="btn btn-primary">Create Post</button>
-    </form>
-      
+    </form>   
 </div>
 <script>
     const title = document.querySelector('#title');
