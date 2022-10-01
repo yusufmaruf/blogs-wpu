@@ -11,7 +11,13 @@
                     @csrf
                     <button class="btn btn-danger" onclick="return confirm('Are You Sure?')"><span  data-feather="x-circle"></span>Delete</button>
                 </form>
-            <img src="https://source.unsplash.com/1200x400?{{$post->category->name}}" class="card-img-top mt-3" alt="{{$post->category->name}}" class="img-fluid">
+            @if ($post->image)
+                <div style="max-height: 400px; max-width:1200px; overflow:hidden;">
+                    <img src="{{asset('storage/' . $post->image)}}" class="card-img-top mt-3" alt="{{$post->category->name}}" class="img-fluid">
+                </div>
+            @else
+                <img src="https://source.unsplash.com/1200x400?{{$post->category->name}}" class="card-img-top mt-3" alt="{{$post->category->name}}" class="img-fluid">    
+            @endif
             <article class="my-3 fs-5">
                {!! $post->body !!}
             </article> 
